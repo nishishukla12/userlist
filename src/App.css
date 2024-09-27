@@ -77,6 +77,7 @@ body {
   height: 100px;
   margin: 0 auto;
   border-radius: 50%;
+  object-fit: cover;
 }
 .user-card button,
 .list-view button {
@@ -196,6 +197,7 @@ table {
 }
 table.list-view img {
   width: 150px;
+  object-fit: cover;
 }
 @media (max-width: 767px) {
   .table-responsive {
