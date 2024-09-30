@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import gridImg  from '../Assets/gridview.png';
+import gridImg from '../Assets/gridview.png';
 import Activelistview from '../Assets/Activelistview.png';
 import user1 from '../Assets/user1.png';
 import user2 from '../Assets/user2.png';
@@ -9,12 +9,12 @@ import user5 from '../Assets/user5.png';
 import user6 from '../Assets/user6.png';
 // Initial list of users
 const initialUsers = [
-  { id: 1, firstName: 'John', lastName: 'Doe', email: 'john@example.com', profilePic: user1 },
-  { id: 2, firstName: 'Jane', lastName: 'Smith', email: 'jane@example.com', profilePic: user2 },
-  { id: 3, firstName: 'Doe', lastName: 'Smith', email: 'jane@example.com', profilePic: user3 },
-  { id: 4, firstName: 'Charlie', lastName: 'Smith', email: 'jane@example.com', profilePic: user4 },
-  { id: 5, firstName: 'Ayan', lastName: 'Smith', email: 'jane@example.com', profilePic: user5 },
-  { id: 6, firstName: 'Adnan', lastName: 'Smith', email: 'jane@example.com', profilePic: user6 }
+  { id: 1, firstName: 'John', lastName: 'Doe', email: 'john@gmail.com', profilePic: user1 },
+  { id: 2, firstName: 'Jane', lastName: 'Smith', email: 'jane@gmail.com', profilePic: user2 },
+  { id: 3, firstName: 'Doe', lastName: 'Smith', email: 'doe@gmail.com', profilePic: user3 },
+  { id: 4, firstName: 'Charlie', lastName: 'Smith', email: 'charlie@gmail.com', profilePic: user4 },
+  { id: 5, firstName: 'Ayan', lastName: 'Smith', email: 'ayan@gmail.com', profilePic: user5 },
+  { id: 6, firstName: 'Adnan', lastName: 'Smith', email: 'adnan@gmail.com', profilePic: user6 }
 ];
 
 const Home = () => {
@@ -51,18 +51,18 @@ const Home = () => {
       <div className='topHeader'>
         <h2>All</h2>
         <div className="cta--wrap">
-        <button onClick={toggleView}>
-        <img 
-          src={isGridView ? Activelistview : gridImg} 
-          alt={isGridView ? 'List View Icon' : 'Grid View Icon'} 
-          style={{ width: '20px', marginRight: '8px' }}
-        />
-        {isGridView ? 'List View' : 'Grid View'}
-      </button>
-      <button onClick={() => setShowPopup(true)} className='user-cta'>Add New User</button>
-      </div>
+          <button onClick={toggleView}>
+            <img
+              src={isGridView ? Activelistview : gridImg}
+              alt={isGridView ? 'List View Icon' : 'Grid View Icon'}
+              style={{ width: '20px', marginRight: '8px' }}
+            />
+            {isGridView ? 'List View' : 'Grid View'}
+          </button>
+          <button onClick={() => setShowPopup(true)} className='user-cta'>Add New User</button>
         </div>
-       
+      </div>
+
       {/* Grid or List view */}
       {isGridView ? (
         <div className="grid-view">
@@ -77,28 +77,28 @@ const Home = () => {
         </div>
       ) : (
         <div className="table-responsive">
-        <table className="list-view">
-          <thead>
-            <tr>
-              <th>Profile Picture</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map(user => (
-              <tr key={user.id}>
-                <td><img src={user.profilePic} alt="profile" /></td>
-                <td>{user.firstName}</td>
-                <td>{user.lastName}</td>
-                <td>{user.email}</td>
-                <td><button onClick={() => deleteUser(user.id)}>Delete</button></td>
+          <table className="list-view">
+            <thead>
+              <tr>
+                <th>Profile Picture</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {users.map(user => (
+                <tr key={user.id}>
+                  <td><img src={user.profilePic} alt="profile" /></td>
+                  <td>{user.firstName}</td>
+                  <td>{user.lastName}</td>
+                  <td>{user.email}</td>
+                  <td><button onClick={() => deleteUser(user.id)}>Delete</button></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
 
@@ -136,8 +136,8 @@ const Home = () => {
               placeholder="Profile Picture URL"
             />
             <div className="popup--cta">
-            <button onClick={addUser}>Save</button>
-            <button onClick={() => setShowPopup(false)} className='cancel--cta'>Cancel</button>
+              <button onClick={addUser}>Save</button>
+              <button onClick={() => setShowPopup(false)} className='cancel--cta'>Cancel</button>
             </div>
           </div>
         </div>
